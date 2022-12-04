@@ -16,7 +16,8 @@ changeDetected() {
 	then
 		echo "focusing address bar"
 		sleep 0.05
-		checkWindow=$(xdotool getactivewindow getwindowname)
+		
+		checkWindow=$(xdotool getactivewindow getwindowname)	# check again the window name since it might change (happened eg when powering off)
 		if [[ "$checkWindow" == "$NEWTABWINDOWNAME" ]]
 		then
 			xdotool key --clearmodifiers ctrl+l	# focus address bar
