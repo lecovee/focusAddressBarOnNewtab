@@ -2,7 +2,7 @@
 
 ### global constants ###
 
-NEWTABWINOWNAME="my home page — Mozilla Firefox"
+NEWTABWINDOWNAME="my home page — Mozilla Firefox"
 
 CLOSEADDRESSBARHISTORY=true			# simulates a escape key press after ctrl+l
 
@@ -12,7 +12,7 @@ CLOSEADDRESSBARHISTORY=true			# simulates a escape key press after ctrl+l
 # if window name is correct press ctrl+l and escape afterwards
 changeDetected() {
 	eval newWindow="$1"
-	if [[ "$newWindow" == "$NEWTABWINOWNAME" ]]
+	if [[ "$newWindow" == "$NEWTABWINDOWNAME" ]]
 	then
 		echo "focusing address bar"
 		sleep 0.05
