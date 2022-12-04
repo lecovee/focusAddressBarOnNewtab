@@ -16,10 +16,14 @@ changeDetected() {
 	then
 		echo "focusing address bar"
 		sleep 0.05
-		xdotool key --clearmodifiers ctrl+l	# focus address bar
-		if $CLOSEADDRESSBARHISTORY
+		checkWindow=$(xdotool getactivewindow getwindowname)
+		if [[ "$checkWindow" == "$NEWTABWINDOWNAME" ]]
 		then
-			xdotool key --clearmodifiers Escape	# close address bar history
+			xdotool key --clearmodifiers ctrl+l	# focus address bar
+			if $CLOSEADDRESSBARHISTORY
+			then
+				xdotool key --clearmodifiers Escape	# close address bar history
+			fi
 		fi
 	fi
 }
